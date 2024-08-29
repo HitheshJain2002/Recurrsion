@@ -89,8 +89,7 @@ int binary_seacrh(int arr[], int start, int end, int target)
        return  binary_seacrh(arr, start, mid - 1, target);
     }else
     {
-
-   return binary_seacrh(arr, mid + 1,end, target);
+  return binary_seacrh(arr, mid + 1,end, target);
 }
 }
 void numsToDigit(int num){
@@ -115,11 +114,21 @@ return sortedArrayNot(arr,size,index+1);
 }
 int main()
 {
-     int arr[] = {1, 15,6,9,33,44};
-   int size = 6;
+     int arr[] = {10, 3, 40, 20, 50, 80, 70};
+   int size = 7;
    int index=0;
- bool ans=  sortedArrayNot(arr,size,index);
- cout << "Answer (yes or no): " << (ans ? "yes" : "no") << endl;
+   
+    int target = 70; 
+    int ans = binary_seacrh(arr, 0, size-1, target);
+   if (ans != -1)
+        cout << "Element found at index: " << ans << endl;
+    else
+        cout << "Element not found" << endl;
+// numsToDigit(12345);
+    return 0;
+}
+//  bool ans=  sortedArrayNot(arr,size,index);
+//  cout << "Answer (yes or no): " << (ans ? "yes" : "no") << endl;
 //     // vector<int> ans;
 
 //     // for (int i = 0; i < ans.size(); i++) {
@@ -128,15 +137,6 @@ int main()
 //     // cout << endl;
    
     
-//     int target = 33; 
-//     int ans = binary_seacrh(arr, 0, size-1, target);
-//    if (ans != -1)
-//         cout << "Element found at index: " << ans << endl;
-//     else
-//         cout << "Element not found" << endl;
-// numsToDigit(12345);
-    return 0;
-}
 // int key = 160;
 // int Min=INT32_MAX;
 // minArray(arr, size, 0,Min);
